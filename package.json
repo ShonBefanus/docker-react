@@ -15,7 +15,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "docker-build": "docker build -t dockerid3434/frontend -f Dockerfile.dev .",
+    "docker-run": "docker run -p 3000:3000 -v /app/node_modules -v %cd%:/app dockerid3434/frontend",
+    "docker-test": "docker run dockerid3434/frontend npm run test",
+    "docker-cmd": "docker exec -it dockerid3434/frontend sh"
   },
   "eslintConfig": {
     "extends": [
